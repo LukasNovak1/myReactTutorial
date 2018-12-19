@@ -1,0 +1,37 @@
+.contact {
+    height: 190px;
+    width: 224px;
+
+    
+    margin: 5px;
+    padding: 10px;
+    float: left;
+}
+
+.bg-Male {
+    background-color: aliceblue;
+}
+
+.bg-Female {
+    background-color: lavenderblush;
+}
+
+.rounded-card {
+    border-radius: 0px 0px 23px 0px;
+}
+
+.rounded-img {
+    border-radius: 15px ;
+}
+
+.contactImageContainer{
+    height: 48px;
+}
+
+.page {
+    min-height: 1500px;
+}
+
+.nav-localization{
+    margin-top: 13px;   
+}
