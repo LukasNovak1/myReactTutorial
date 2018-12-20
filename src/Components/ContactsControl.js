@@ -3,43 +3,19 @@ import React, { Component, PropTypes } from 'react';
 class ContactsControl extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      itemsCount: 20,
-      sortText: '',
-      pokus: ''
-    };
-
   }
 
-  static defaultProps = {
-    options: [10, 20, 40]
+  onContactsCountChange(event) {
+    //nastavim property komponenty ContactsControl, abych jeji hodnotu mohl poslat nahoru       
+    this.props.onItemsCountChange(event.target.value);
   }
 
-  onItemsCountSelect() {
-    if (this.refs.itemsCount.value) {
-      this.setState({
-        itemsCount: this.refs.itemsCount.value
-      }, function () {
-        //nastavim property komponenty ContactsControl, abych jeji hodnotu mohl poslat nahoru       
-        this.props.onItemsCountChange(this.refs.itemsCount.value);
-      })
-    }
-  }
-
-  onSortChange(event) {
-    //this.setState({
-    //  sortText: event.target.value
-    //},
-    //  function () {
-    //    this.props.onSortTextChange(this.state.sortText);
-    //  }
-    //);
-
+  onChangeSortText(event) {
     this.props.onSortTextChange(event.target.value);
   }
 
   render() {
-    let options = this.props.options.map(option => {
+    let options = this.props.itemsPerPageValues.map(option => {
       return (
         <option value={option} key={option}>{option}</option>
       );
@@ -48,11 +24,11 @@ class ContactsControl extends Component {
     return (
       <div>
         <span>Items per page: </span>
-        <select defaultValue={this.state.itemsCount} ref="itemsCount" onChange={this.onItemsCountSelect.bind(this)}>
+        <select defaultValue={this.props.contactsCount} onChange={this.onContactsCountChange.bind(this)}>
           {options}
         </select>
         <span> Sort by name: </span>
-        <input type="text" onChange={this.onSortChange.bind(this)} />
+        <input type="text" value={this.props.sortText} onChange={this.onChangeSortText.bind(this)} />
       </div>
     );
   }

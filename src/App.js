@@ -11,6 +11,7 @@ import GetMethodPage from './Pages/GetMethod1Page'
 import GetMethod2Page from './Pages/GetMethod2Page'
 import ContextPage from './Pages/ContextPage'
 import LifeCyclePage from './Pages/LifeCyclePage'
+import FormPage from './Pages/FormPage'
 
 //localization - pouzito na strance ContextPage.js
 import Localization, { LocalizationContext, GetDefaultCulture } from './Context/Localization'
@@ -94,6 +95,12 @@ class App extends Component {
           name: 'Life cycle',
           url: '/LifeCyclePage',
           component: LifeCyclePage,
+          exact: true
+        },
+        {
+          name: 'Form',
+          url: '/FormPage',
+          component: FormPage,
           exact: true
         }
       ],
