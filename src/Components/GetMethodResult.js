@@ -4,8 +4,8 @@
 import { Get } from '../CommonScripts/Api'
 
 class GetMethodResultRenderer extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       methodResult: []
     }   

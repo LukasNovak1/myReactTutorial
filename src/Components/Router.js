@@ -56,7 +56,7 @@ class Router extends Component {
                   {menuItems}
                 </ul>
               </div>
-              <div class="nav-localization">                
+              <div className="nav-localization">                
                 <Localization onCultureChange={this.onCultureChange.bind(this)} cultureSettings={cultureContext} />
               </div>
             </div>

@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
 class ContactsControl extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       itemsCount: 20,
       sortText: '',
