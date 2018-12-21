@@ -14,6 +14,7 @@ class MyErrorBoundary extends Component {
   componentDidCatch(error, info) {
     // You can also log the error to an error reporting service
     //logErrorToMyService(error, info);
+    this.setState({ hasError: true });
   }
 
   render() {
@@ -26,6 +27,7 @@ class MyErrorBoundary extends Component {
     }
 
     return this.props.children;
+
   }
 }
 export default MyErrorBoundary

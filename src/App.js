@@ -12,6 +12,7 @@ import GetMethod2Page from './Pages/GetMethod2Page'
 import ContextPage from './Pages/ContextPage'
 import LifeCyclePage from './Pages/LifeCyclePage'
 import FormPage from './Pages/FormPage'
+import SvgPage from './Pages/SvgPage'
 
 //localization - pouzito na strance ContextPage.js
 import Localization, { LocalizationContext, GetDefaultCulture } from './Context/Localization'
@@ -101,6 +102,12 @@ class App extends Component {
           name: 'Form / Lazy',
           url: '/FormPage',
           component: FormPage,
+          exact: true
+        },
+        {
+          name: 'SVG',
+          url: '/Svg',
+          component: SvgPage,
           exact: true
         }
       ],

@@ -1,12 +1,14 @@
 ﻿import React, { Component, Suspense } from 'react';
 import UserRegistrationForm from '../Components/UserRegistrationForm'
-import MyErrorBoundary from '../Components/Lazy/MyErrorBoundary'
-const TimeConsumingComponent = React.lazy(() => import('../Components/Lazy/TimeConsumingComponent'));
+import MyErrorBoundary from '../Components/MyErrorBoundary'
+import TroublemakerComponent from '../Components/TroublemakerComponent'
+const TimeConsumingComponent = React.lazy(() => import('../Components/TimeConsumingComponent'));
 
 class FormPage extends Component {
   render() {
+    //uvnitr returnu smi byt jen jeden element (treba div). <> se nevykresluje a na prvnim miste se rendruje <div className="container">
     return (
-      <div>
+      <>
         <div className="container">
           <div className="row">
             <div className="col">
@@ -67,7 +69,26 @@ class FormPage extends Component {
             </div>
           </div>
         </div>
-      </div>
+
+        <div className="container well">
+          <div className="row">
+            <div className="col">
+              <strong>Error boundaries:</strong> <a href="https://reactjs.org/docs/error-boundaries.html">Návod</a>
+              <br />
+              Nějak mi to nefunguje, nevím proč.
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <MyErrorBoundary>
+                <TroublemakerComponent />
+              </MyErrorBoundary>
+            </div>
+          </div>
+        </div>
+      </>
     )
   }
 }
