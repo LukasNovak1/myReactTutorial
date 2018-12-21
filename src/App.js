@@ -98,7 +98,7 @@ class App extends Component {
           exact: true
         },
         {
-          name: 'Form',
+          name: 'Form / Lazy',
           url: '/FormPage',
           component: FormPage,
           exact: true
