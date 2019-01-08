@@ -16,8 +16,8 @@ class HomePage extends Component {
           <div className="row">
             <div className="col">
               Můj návor na React. Nejlepší dokumentace a tutorial <a href="https://reactjs.org/docs/getting-started.html">zde</a>. 
-              V tomto návodu jsou uvedeny i jiné zdroje. Ty mohou být zastaralé a vždy platí to co je uvedeno v tomto návodu.
-              Projekt je vytvořen pomocí npm. Návod <a href="https://reactjs.org/docs/create-a-new-react-app.html">zde</a>.
+              V tomto návodu jsou uvedeny i jiné zdroje. Ty mohou být zastaralé a vždy platí to co je uvedeno v tomto návodu.<br/>
+              Projekt je vytvořen pomocí npm. Návod na instalaci NPM je zde <a href="https://reactjs.org/docs/create-a-new-react-app.html">zde</a>.
             </div>
           </div>
         </div>

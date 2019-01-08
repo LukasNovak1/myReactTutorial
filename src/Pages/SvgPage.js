@@ -1,10 +1,39 @@
-import React, { Component } from 'react'
+﻿import React, { Component } from 'react'
 import { render } from 'react-dom'
-import ReactSVG from 'react-svg'
-//import Svg1 from '../SVG/svg1.svg'
+import { SvgLoader, SvgProxy } from 'react-svgmt';
+import SngRender from '../Components/SvgRenderer'
+import SvgRenderer from '../Components/SvgRenderer';
+
+const svgUrl = "https://raw.githubusercontent.com/flekschas/simple-world-map/master/world-map.svg";
 
 class SvgPage extends Component {
-  render(){
+
+  componentDidMount() {
+
+  }
+
+  render() {
+    let colorItems =
+      [
+        {
+          "selector": "#cz",
+          "color": "green"
+        },
+        {
+          "selector": "#us",
+          "color": "blue"
+        },
+        {
+          "selector": "#ru",
+          "color": "red"
+        },
+        {
+          "selector": "#au",
+          "color": "orange"
+        }
+      ]
+
+
     return (
       <div>
         <div className="container">
@@ -17,8 +46,21 @@ class SvgPage extends Component {
         <div className="container">
           <div className="row">
             <div className="col">
-              Zde svg jest:
-              <ReactSVG src={require('../SVG/svg1.svg') } />
+              <a href="https://medium.com/@hugozap/svg-manipulation-tools-for-react-e1d58b754c81">Zdroj</a><br />
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <textarea value={colorItems} />
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <SvgRenderer svgUrl={svgUrl} colorItems={colorItems} />
             </div>
           </div>
         </div>

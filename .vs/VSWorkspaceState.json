@@ -4,10 +4,10 @@
     "\\public",
     "\\src",
     "\\src\\Components",
-    "\\src\\Context",
     "\\src\\HOComponents",
-    "\\src\\Localization"
+    "\\src\\Pages",
+    "\\src\\SVG"
   ],
-  "SelectedNode": "\\src\\Localization\\en.json",
+  "SelectedNode": "\\src\\Pages\\HomePage.js",
   "PreviewInSolutionExplorer": false
 }
