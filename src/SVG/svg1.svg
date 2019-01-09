@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="329.78128"
+     inkscape:cx="331.56699"
      inkscape:cy="790.05999"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -58,7 +58,8 @@
        height="8.8824406"
        x="84.288696"
        y="43.188984"
-       style="stroke-width:0.26458332;fill:#b3b3b3" />
+       style="stroke-width:0.26458332;fill:#b3b3b3"
+       onclick="HandleSvgClick(this);" />
     <rect
        id="rect03"
        width="8.8824406"

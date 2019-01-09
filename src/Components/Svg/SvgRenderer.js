@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-import { SvgLoader, SvgProxy } from "react-svgmt";
+//import { SvgLoader } from "react-svgmt";
+import SvgProxy from './svg-proxy';
+import SvgLoader from './svg-loader'
 
 class SvgRenderer extends Component {
+  hop() {
+    alert("hop");
+  }
+
   render() {
     if (this.props.svgUrl) {
       let proxys;
@@ -27,6 +33,7 @@ class SvgRenderer extends Component {
           {proxysMsg}
           <SvgLoader path={this.props.svgUrl}>
             {proxys}
+            <SvgProxy selector="#us" />
           </SvgLoader>
         </div>
       )

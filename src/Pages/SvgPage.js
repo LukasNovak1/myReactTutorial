@@ -1,10 +1,11 @@
 ﻿import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { SvgLoader, SvgProxy } from 'react-svgmt';
-import SngRender from '../Components/SvgRenderer'
-import SvgRenderer from '../Components/SvgRenderer';
 
-const svgUrl = "https://raw.githubusercontent.com/flekschas/simple-world-map/master/world-map.svg";
+import SvgRenderer from '../Components/Svg/SvgRenderer';
+
+//const svgPath = "https://raw.githubusercontent.com/flekschas/simple-world-map/master/world-map.svg";
+const svgPath = '/SVG/map.svg';
 
 class SvgPage extends Component {
 
@@ -60,7 +61,7 @@ class SvgPage extends Component {
         <div className="container">
           <div className="row">
             <div className="col">
-              <SvgRenderer svgUrl={svgUrl} colorItems={colorItems} />
+              <SvgRenderer svgUrl={svgPath} colorItems={colorItems} />
             </div>
           </div>
         </div>
