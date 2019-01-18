@@ -43,13 +43,17 @@ export default class SvgProxy extends React.Component {
     this.updateSvgElements(this.props, true);
   }
 
-  updateSvgElements(nextProps, force) {
+  getP() {
+    return this.props;
+  }
+
+  updateSvgElements(nextProps, force) {   
     const { svgRef } = this;
 
     if (svgRef && (this.elemRefs.length === 0 || force)) {
-      // We don't have the svg element reference.
-
+      // We don't have the svg element reference.     
       const nodes = [].slice.apply(svgRef.querySelectorAll(nextProps.selector));
+      //console.log(nodes);
       if (nodes.length === 0 && ["svg", "root"].includes(nextProps.selector)) {
         // If the selector equls 'svg' or 'root' use the svg node
         nodes.push(svgRef);
@@ -67,12 +71,12 @@ export default class SvgProxy extends React.Component {
       for (let i = 0; i < propkeys.length; i += 1) {
         const propName = propkeys[i];
         // Ignore component props
-        const ownprop = ["selector", "onElementSelected"].includes(propName);
+        const ownprop = ["selector", "onElementSelected"].includes(propName);        
         if (!ownprop) {
           let nsPrefix = null;
           let nsValue = null;
           let attrNameWithoutPrefix = propName;
-          let attrNamePrefixed = null;
+          let attrNamePrefixed = null;          
           // TODO: check performance implications (for animations) of testing everytime
           const r = hasNamespaceRegexp.exec(propName);
           if (r && r[1]) {
@@ -86,9 +90,13 @@ export default class SvgProxy extends React.Component {
             attrNamePrefixed = propName;
           }
           // Apply attributes to node
-          for (let elemix = 0; elemix < this.elemRefs.length; elemix += 1) {
-            const elem = this.elemRefs[elemix];
+          console.log(this.elemRefs);
+          for (let elemix = 0; elemix < this.elemRefs.length; elemix += 1) {            
+            const elem = this.elemRefs[elemix];                     
             if (typeof nextProps[propName] === "function") {
+              console.log("func ," + propName + ", " + nextProps[propName]);
+              console.log(nextProps);
+              nextProps[propName].bind(this);
               elem[propName.toLowerCase()] = nextProps[propName];
             } else {
               // Discard non string props
@@ -108,7 +116,7 @@ export default class SvgProxy extends React.Component {
                 this.originalValues[propName]
               );
               // https://developer.mozilla.org/en/docs/Web/SVG/Namespaces_Crash_Course
-              elem.setAttributeNS(nsValue, attrNamePrefixed, attrValue);
+              elem.setAttributeNS(nsValue, attrNamePrefixed, attrValue);              
               // Set inner text
               if (
                 typeof nextProps.children === "string" &&

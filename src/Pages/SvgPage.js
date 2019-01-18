@@ -9,8 +9,21 @@ const svgPath = '/SVG/map.svg';
 
 class SvgPage extends Component {
 
-  componentDidMount() {
+  czOnClick(value) {
+    alert("Ček Ripablik důd");
+  }
 
+  usaOnClick(value) {    
+    alert("Juesej")
+  }
+
+  svgOnclick(element) {
+    console.log(element);
+    this.showAlert(element);
+  }
+
+  showAlert(element) {    
+    alert("clicked element id: " + element.target.id + ", parent element: " + element.path[1].id);
   }
 
   render() {
@@ -33,6 +46,21 @@ class SvgPage extends Component {
           "color": "orange"
         }
       ]
+
+    let clickItems = [
+      {
+        "selector": "#cz",
+        "clickFunc": this.svgOnclick.bind(this)
+      },
+      {
+        "selector": "#us",
+        "clickFunc": this.svgOnclick.bind(this)
+      },
+      {
+        "selector": "#br",
+        "clickFunc": this.svgOnclick.bind(this)
+      }
+    ]
 
 
     return (
@@ -61,7 +89,7 @@ class SvgPage extends Component {
         <div className="container">
           <div className="row">
             <div className="col">
-              <SvgRenderer svgUrl={svgPath} colorItems={colorItems} />
+              <SvgRenderer svgUrl={svgPath} colorItems={colorItems} clickItems={clickItems} />
             </div>
           </div>
         </div>

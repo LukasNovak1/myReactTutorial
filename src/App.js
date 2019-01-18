@@ -13,6 +13,7 @@ import ContextPage from './Pages/ContextPage'
 import LifeCyclePage from './Pages/LifeCyclePage'
 import FormPage from './Pages/FormPage'
 import SvgPage from './Pages/SvgPage'
+import BarcodePage from './Pages/BarcodePage'
 
 //localization - pouzito na strance ContextPage.js
 import Localization, { LocalizationContext, GetDefaultCulture } from './Context/Localization'
@@ -108,6 +109,12 @@ class App extends Component {
           name: 'SVG',
           url: '/Svg',
           component: SvgPage,
+          exact: true
+        },
+        {
+          name: 'Barcore',
+          url: '/Barcode',
+          component: BarcodePage,
           exact: true
         }
       ],

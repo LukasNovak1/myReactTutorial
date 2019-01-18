@@ -2,11 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\public",
+    "\\public\\Svg",
     "\\src",
     "\\src\\Components",
-    "\\src\\HOComponents",
-    "\\src\\Pages",
-    "\\src\\SVG"
+    "\\src\\Components\\Svg",
+    "\\src\\Pages"
   ],
+  "SelectedNode": "\\src\\Components\\Svg\\svg-injector.js",
   "PreviewInSolutionExplorer": false
 }

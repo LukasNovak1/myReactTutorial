@@ -5,35 +5,30 @@ import SvgProxy from './svg-proxy';
 import SvgLoader from './svg-loader'
 
 class SvgRenderer extends Component {
-  hop() {
-    alert("hop");
-  }
+  
 
   render() {
     if (this.props.svgUrl) {
-      let proxys;
-      let proxysMsg = '';
+      let colorProxys;
+      let clickProxys;     
 
-      if (this.props.colorItems) {
-        console.log(this.props.colorItems);
-        proxys = this.props.colorItems.map(item => {
-          return <SvgProxy selector={item.selector} fill={item.color} />
-          // <SvgProxy selector="#co" fill="red" />
+      if (this.props.colorItems) {       
+        colorProxys = this.props.colorItems.map(item => {
+          return <SvgProxy selector={item.selector} fill={item.color} />          
         });
-      } else {
-        proxysMsg =
-          <div>
-            No colorItems!
-          </div>;
+      } 
+
+      if (this.props.clickItems) {
+        clickProxys = this.props.clickItems.map(item => {
+          return <SvgProxy selector={item.selector} onclick={item.clickFunc} />
+        });
       }
 
       return (
         <div>
-          
-          {proxysMsg}
           <SvgLoader path={this.props.svgUrl}>
-            {proxys}
-            <SvgProxy selector="#us" />
+            {colorProxys}
+            {clickProxys}
           </SvgLoader>
         </div>
       )
