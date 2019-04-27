@@ -14,6 +14,7 @@ import LifeCyclePage from './Pages/LifeCyclePage'
 import FormPage from './Pages/FormPage'
 import SvgPage from './Pages/SvgPage'
 import BarcodePage from './Pages/BarcodePage'
+import TablesPage from './Pages/TablesPage'
 
 //localization - pouzito na strance ContextPage.js
 import Localization, { LocalizationContext, GetDefaultCulture } from './Context/Localization'
@@ -115,6 +116,12 @@ class App extends Component {
           name: 'Barcore',
           url: '/Barcode',
           component: BarcodePage,
+          exact: true
+        },
+        {
+          name: 'Tables',
+          url: '/Tables',
+          component: TablesPage,
           exact: true
         }
       ],
